@@ -67,12 +67,14 @@ function recorrerListadoYRenderizarTarjetas() {
   const CONTENEDOR = document.querySelector('#fila');
 
   listado.forEach(item => {
-    CONTENEDOR.innerHTML +=
+    if (listado.length <= 3) {
+     CONTENEDOR.innerHTML +=
       `<div class ='caja'>
-    <img src= ${item.imgUrl} alt= ${item.lenguajes}>
-    <p class ='lenguajes'> Lenguajes: ${item.lenguajes}</p>
-    <p class ='bimestre'> Bimestre: ${item.bimestre}</p>
-    </div>`
+      <img src= ${item.imgUrl} alt= ${item.lenguajes}>
+      <p class ='lenguajes'> Lenguajes: ${item.lenguajes}</p>
+      <p class ='bimestre'> Bimestre: ${item.bimestre}</p>
+      </div>`
+    }
   });
 }
 
